@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "05fb1d47-6d75-4afa-bfd1-0b7bf0cc5f38",
+		"name": "ionix-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "findAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY29kZXJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoianJvZHJpZ3Vlem5vdm9hIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY3MDU5OTE4MSwiYXV0aG9yaXRpZXMiOlsiQURNSU4iXSwianRpIjoiOTcwMTYzMWUtYWE2ZC00OWQ2LWExNGMtZDJlMDMwYjhlYjdmIiwiY2xpZW50X2lkIjoiYmFja2VuZGlvbml4In0.TNJv--HWFKPuZfVdZjIHgBT8RzjO8q3p-ueXd0xqE6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"name\": \"Daniel Pardo\",\r\n            \"userName\": \"daniel.pardo\",\r\n            \"email\": \"daniel.pardo@gmail.com\",\r\n            \"phone\": \"+56982131333\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/user/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"user",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findUserByEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/api/user/search/jrodrigueznovoa@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"user",
+								"search",
+								"jrodrigueznovoa@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY29kZXJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoianJvZHJpZ3Vlem5vdm9hIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY3MDU5OTE4MSwiYXV0aG9yaXRpZXMiOlsiQURNSU4iXSwianRpIjoiOTcwMTYzMWUtYWE2ZC00OWQ2LWExNGMtZDJlMDMwYjhlYjdmIiwiY2xpZW50X2lkIjoiYmFja2VuZGlvbml4In0.TNJv--HWFKPuZfVdZjIHgBT8RzjO8q3p-ueXd0xqE6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/api/user/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"user",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-external",
+			"item": [
+				{
+					"name": "api-external",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/search/external/1-9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"search",
+								"external",
+								"1-9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "token",
+			"item": [
+				{
+					"name": "token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"access_token\", data.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ionix123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "backendionix",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "jrodrigueznovoa",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "ionix123",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8181/oauth/token",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
