@@ -14,7 +14,7 @@ Al iniciar el el desarrolo el puerto que se se encuentra es 8181 si desea modifi
 
 Al dar Run al proyecto por defecto se cargan datos de prueba para usuarios y datos para utilizar token.
 			
-importar collection postman 
+importar collection postman, se disponibiliza en el directorio /postman
 Para eliminar usuario y crear usuario estos encuentran protegidos, se debe crear un token.
 
 para ver documentación de las API debe ingresar a http://localhost:8181/swagger-ui.html#
