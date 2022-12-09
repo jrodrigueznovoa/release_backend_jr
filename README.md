@@ -8,6 +8,7 @@ si desea instalar lombok en la raiz del ide Spring Tool Suite debe seguir los si
 	a.- copiar la libreria lombok a la raiz del directorio.
 	b.- Modifificar el archivo SpringToolSuite4.ini y agregar en la última línea -javaagent:lombok.jar
 
+crear base datos test_ionix en mysql
 
 Al iniciar el el desarrolo el puerto que se se encuentra 8181 si desea modificar lo puede realizar en el archivo application.properties
 
