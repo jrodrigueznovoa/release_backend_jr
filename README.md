@@ -6,7 +6,7 @@ Prerequisitos
 Tener instalado la libreria lombok, se encuentra disponible en /lib
 si desea instalar lombok en la raiz del ide Spring Tool Suite debe seguir los siguientes pasos:
 	a.- copiar la libreria lombok a la raiz del directorio.
-	b.- Modifificar el archivo SpringToolSuite4.ini y agregar en la última línea -javaagent:lombok.jar
+	b.- Modificar el archivo SpringToolSuite4.ini y agregar en la última línea -javaagent:lombok.jar
 
 crear base datos test_ionix en mysql
 
